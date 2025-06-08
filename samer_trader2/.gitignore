@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Node
+node_modules/
+
+# IDE files
+.vscode/
+.idea/
+.DS_Store
+
+# Environment files
+.env
