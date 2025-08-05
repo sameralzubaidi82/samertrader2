@@ -22,14 +22,21 @@ function showPage(pageId) {
     }
 
         // Highlight the navigation item that triggers this page.
-        // We search for a nav-item whose inline onclick contains the pageId.
-        // Some page IDs may include characters (like hyphens) that break the CSS selector.
-        // Wrap the querySelector in a try/catch to avoid script termination on invalid selectors.
+        // Instead of using a CSS selector that may break on hyphens or other
+        // special characters in the pageId, iterate over all nav items and
+        // compare their inline onclick attributes. This avoids invalid
+        // selector errors and is more resilient if additional nav items are
+        // introduced.
         try {
-            const navItem = document.querySelector(`.nav-item[onclick*="${pageId}"]`);
-            if (navItem) {
-                navItem.classList.add('active');
-            }
+            const navItemsList = document.querySelectorAll('.nav-item');
+            navItemsList.forEach(item => {
+                // Ensure we clear any existing active class
+                item.classList.remove('active');
+                const onclickAttr = item.getAttribute('onclick');
+                if (onclickAttr && onclickAttr.includes(pageId)) {
+                    item.classList.add('active');
+                }
+            });
         } catch (e) {
             console.error('Failed to highlight nav item:', e);
         }
