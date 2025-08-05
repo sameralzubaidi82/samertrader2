@@ -706,7 +706,6 @@
                     </tbody>
                 </table>
             </div>
-        </div>
 
             <!-- Extended Dashboard Modules -->
             <!-- These additional cards provide quick access to risk metrics, news, strategy rankings and analytics, reflecting the complete feature set described in the specification document. -->
@@ -783,6 +782,8 @@
                 </div>
             </div>
 
+        </div> <!-- Close dashboard page after including extended and additional modules -->
+
         <!-- Strategies Page -->
         <div class="page" id="strategies">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
@@ -848,6 +849,12 @@
                         <button class="btn btn-secondary" onclick="showAlert('Edit strategy')">Edit</button>
                         <button class="btn btn-danger" onclick="showAlert('Stop strategy')">Stop</button>
                     </div>
+                </div>
+                <!-- Strategy Ranking & Comparison -->
+                <div class="dashboard-card" style="margin-top: 2rem;">
+                    <h3 style="color: #1e40af; margin-bottom: 0.5rem;">📊 Strategy Ranking & Comparison</h3>
+                    <p style="color: #475569; margin-bottom: 1rem;">Evaluate and compare your strategies using custom ranking criteria. View leaderboards, build comparison matrices and identify the top performers across different market conditions.</p>
+                    <button class="btn btn-secondary" onclick="showAlert('📈 Ranking and comparison dashboard coming soon')">Open Ranking Dashboard</button>
                 </div>
 
                 <div class="strategy-card">
@@ -1220,6 +1227,25 @@
                     <button class="btn btn-secondary" onclick="showAlert('⚡ Opening execution & broker monitor')">Open Execution Monitor</button>
                 </div>
             </div>
+
+            <!-- Dynamic Risk Management Tools -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                <div class="dashboard-card">
+                    <h3 style="color: #1e40af; margin-bottom: 0.5rem;">📏 Dynamic Position Sizing</h3>
+                    <p style="color: #475569; margin-bottom: 1rem;">Automatically adjust position sizes based on volatility, correlation and risk appetite.</p>
+                    <button class="btn btn-secondary" onclick="showAlert('📏 Dynamic position sizing module coming soon')">Configure Position Sizing</button>
+                </div>
+                <div class="dashboard-card">
+                    <h3 style="color: #1e40af; margin-bottom: 0.5rem;">🎯 Risk Scenario Modeling</h3>
+                    <p style="color: #475569; margin-bottom: 1rem;">Model worst‑case scenarios, stress events and regime changes to protect your capital.</p>
+                    <button class="btn btn-secondary" onclick="showAlert('🎯 Risk scenario modeling coming soon')">Run Scenarios</button>
+                </div>
+                <div class="dashboard-card">
+                    <h3 style="color: #1e40af; margin-bottom: 0.5rem;">📊 Real‑Time Risk Dashboard</h3>
+                    <p style="color: #475569; margin-bottom: 1rem;">Monitor aggregated portfolio risk, correlation heatmaps and VaR/CVaR in real‑time.</p>
+                    <button class="btn btn-secondary" onclick="showAlert('📊 Opening real‑time risk dashboard')">Open Risk Dashboard</button>
+                </div>
+            </div>
         </div>
 
         <!-- Analytics Page -->
@@ -1459,6 +1485,12 @@
                     <h3 style="color: #1e40af; margin-bottom: 0.5rem;">🌐 Multi‑Timeframe & Asset</h3>
                     <p style="color: #475569; margin-bottom: 1rem;">Design strategies across multiple timeframes and asset classes for robust performance and diversification.</p>
                     <button class="btn btn-secondary" onclick="showAlert('🕒 Multi‑timeframe configuration coming soon')">Configure Multi‑Timeframe</button>
+                </div>
+                <!-- Version Control & History -->
+                <div class="dashboard-card">
+                    <h3 style="color: #1e40af; margin-bottom: 0.5rem;">📁 Version Control & History</h3>
+                    <p style="color: #475569; margin-bottom: 1rem;">Track changes to your strategies over time with built‑in versioning. Review previous iterations, compare differences, and restore prior versions effortlessly.</p>
+                    <button class="btn btn-secondary" onclick="showAlert('🗂️ Version history viewer coming soon')">View History</button>
                 </div>
                 <div class="dashboard-card">
                     <h3 style="color: #1e40af; margin-bottom: 0.5rem;">🔍 Debugger & Error Check</h3>
