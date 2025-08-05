@@ -3,11 +3,16 @@
 
 // Show a given page by its ID and highlight the corresponding nav item.
 function showPage(pageId) {
-    // Hide all pages
-    const pages = document.querySelectorAll('.page');
-    pages.forEach(page => {
-        page.classList.remove('active');
-    });
+        // Hide all pages by setting their display to none and removing the
+        // active class. Explicitly manipulating the style attribute avoids
+        // conflicts with other CSS rules that might override the display
+        // property via specificity. Removing the active class keeps the
+        // semantic class state in sync.
+        const pages = document.querySelectorAll('.page');
+        pages.forEach(page => {
+            page.classList.remove('active');
+            page.style.display = 'none';
+        });
 
     // Remove active class from all navigation items
     const navItems = document.querySelectorAll('.nav-item');
@@ -15,11 +20,14 @@ function showPage(pageId) {
         item.classList.remove('active');
     });
 
-    // Show the selected page if it exists
-    const selectedPage = document.getElementById(pageId);
-    if (selectedPage) {
-        selectedPage.classList.add('active');
-    }
+        // Show the selected page if it exists. Set its display back to
+        // block in addition to adding the active class to ensure it
+        // becomes visible regardless of other CSS rules.
+        const selectedPage = document.getElementById(pageId);
+        if (selectedPage) {
+            selectedPage.classList.add('active');
+            selectedPage.style.display = 'block';
+        }
 
         // Highlight the navigation item that triggers this page.
         // Instead of using a CSS selector that may break on hyphens or other
