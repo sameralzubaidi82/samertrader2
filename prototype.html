@@ -563,6 +563,8 @@
                 <li class="nav-item" onclick="showPage('optimization')">⚙️ Optimization</li>
                 <li class="nav-item" onclick="showPage('tasks')">⏱️ Tasks</li>
                 <li class="nav-item" onclick="showPage('reports')">📋 Reports</li>
+                <!-- New navigation item linking to the comprehensive feature overview page. -->
+                <li class="nav-item" onclick="showPage('features')">📜 Features</li>
                 <li class="nav-item" onclick="showPage('live-trading')">🔴 Live Trading</li>
             </ul>
             <div class="user-profile">
@@ -705,6 +707,81 @@
                 </table>
             </div>
         </div>
+
+            <!-- Extended Dashboard Modules -->
+            <!-- These additional cards provide quick access to risk metrics, news, strategy rankings and analytics, reflecting the complete feature set described in the specification document. -->
+            <div class="dashboard-grid" style="margin-top: 2rem;">
+                <!-- Risk Overview -->
+                <div class="dashboard-card">
+                    <h3 style="color: #1e40af; margin-bottom: 0.5rem;">📉 Risk Overview</h3>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                        <div style="text-align: center;">
+                            <div class="metric-value">1.25%</div>
+                            <div class="metric-label">VaR (1D)</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div class="metric-value">2.10%</div>
+                            <div class="metric-label">CVaR (1D)</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div class="metric-value">-8.3%</div>
+                            <div class="metric-label">Max Drawdown</div>
+                        </div>
+                    </div>
+                    <button class="btn btn-secondary" onclick="showAlert('🔎 Detailed risk report coming soon')">View Details</button>
+                </div>
+                <!-- News & Sentiment -->
+                <div class="dashboard-card">
+                    <h3 style="color: #1e40af; margin-bottom: 0.5rem;">📰 News & Sentiment</h3>
+                    <p style="color: #475569; margin-bottom: 1rem;">Stay informed with integrated market news and sentiment analysis.</p>
+                    <button class="btn btn-secondary" onclick="showAlert('📰 Opening real‑time news feed')">Open News Feed</button>
+                </div>
+                <!-- Top Strategies -->
+                <div class="dashboard-card">
+                    <h3 style="color: #1e40af; margin-bottom: 0.5rem;">🏆 Top Strategies</h3>
+                    <ol style="margin-left: 1rem; color: #475569; margin-bottom: 1rem;">
+                        <li>Momentum RSI Pro</li>
+                        <li>Mean Reversion Alpha</li>
+                        <li>Breakout Scanner</li>
+                    </ol>
+                    <button class="btn btn-secondary" onclick="showAlert('📊 Strategy rankings page coming soon')">View Rankings</button>
+                </div>
+                <!-- Quick Analytics Link -->
+                <div class="dashboard-card" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <h3 style="color: #1e40af; margin-bottom: 0.5rem; text-align: center;">📈 Performance Analytics</h3>
+                    <p style="color: #475569; margin-bottom: 1rem; text-align: center;">Dive deeper into your portfolio's performance and risk metrics.</p>
+                    <button class="btn btn-primary" onclick="showPage('analytics')">Open Analytics</button>
+                </div>
+            </div>
+
+            <!-- Additional Dashboard Modules -->
+            <!-- This row of cards exposes the remaining high‑level platform capabilities outlined in the specification. Each card includes a descriptive summary and a button that triggers a placeholder alert, giving users a preview of the full feature when implemented. -->
+            <div class="dashboard-grid" style="margin-top: 2rem;">
+                <!-- Alerts & Notifications -->
+                <div class="dashboard-card">
+                    <h3 style="color: #1e40af; margin-bottom: 0.5rem;">🔔 Alerts & Notifications</h3>
+                    <p style="color: #475569; margin-bottom: 1rem;">Stay on top of market events, performance alerts and system notifications configured via our alert rule engine.</p>
+                    <button class="btn btn-secondary" onclick="showAlert('🔔 Opening alerts & notifications center')">View Alerts</button>
+                </div>
+                <!-- Market Data & Research -->
+                <div class="dashboard-card">
+                    <h3 style="color: #1e40af; margin-bottom: 0.5rem;">💹 Market Data & Research</h3>
+                    <p style="color: #475569; margin-bottom: 1rem;">Access multi‑asset real‑time and historical data along with research and sentiment tools.</p>
+                    <button class="btn btn-secondary" onclick="showAlert('📈 Opening market data browser')">Market Data Browser</button>
+                </div>
+                <!-- Paper Trading & Simulation -->
+                <div class="dashboard-card">
+                    <h3 style="color: #1e40af; margin-bottom: 0.5rem;">🎮 Paper Trading & Simulation</h3>
+                    <p style="color: #475569; margin-bottom: 1rem;">Test strategies risk‑free with our realistic simulation environment before going live.</p>
+                    <button class="btn btn-secondary" onclick="showAlert('🎮 Opening paper trading dashboard')">Open Simulation</button>
+                </div>
+                <!-- Regulatory & Compliance (optional) -->
+                <div class="dashboard-card">
+                    <h3 style="color: #1e40af; margin-bottom: 0.5rem;">⚖️ Compliance & Reporting</h3>
+                    <p style="color: #475569; margin-bottom: 1rem;">Generate audit trails and regulatory reports to meet institutional compliance requirements.</p>
+                    <button class="btn btn-secondary" onclick="showAlert('⚖️ Opening compliance & reporting dashboard')">Compliance Center</button>
+                </div>
+            </div>
 
         <!-- Strategies Page -->
         <div class="page" id="strategies">
@@ -938,6 +1015,80 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Advanced Parameter Configuration -->
+            <div class="dashboard-card" style="margin-top: 1.5rem;">
+                <h3 style="color: #1e40af; margin-bottom: 0.5rem;">🧰 Advanced Parameter Configuration</h3>
+                <p style="color: #475569; margin-bottom: 1rem;">Define custom parameter ranges, objectives and constraints for multi‑algorithm optimization.</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+                    <div>
+                        <label class="form-label">RSI Period (Min)</label>
+                        <input type="number" class="form-input" value="10">
+                    </div>
+                    <div>
+                        <label class="form-label">RSI Period (Max)</label>
+                        <input type="number" class="form-input" value="30">
+                    </div>
+                    <div>
+                        <label class="form-label">MA Length (Min)</label>
+                        <input type="number" class="form-input" value="20">
+                    </div>
+                    <div>
+                        <label class="form-label">MA Length (Max)</label>
+                        <input type="number" class="form-input" value="200">
+                    </div>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+                    <div>
+                        <label class="form-label">Additional Objective</label>
+                        <select class="form-select">
+                            <option>Minimize Drawdown</option>
+                            <option>Maximize Win Rate</option>
+                            <option>Maximize Risk‑Adjusted Return</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="form-label">Risk Constraint</label>
+                        <input type="number" class="form-input" placeholder="Max drawdown 10%">
+                    </div>
+                    <div>
+                        <label class="form-label">Population Size</label>
+                        <input type="number" class="form-input" value="50">
+                    </div>
+                </div>
+                <button class="btn btn-secondary" onclick="showAlert('🎯 Advanced optimization parameters set')">Save Parameters</button>
+            </div>
+
+            <!-- Optimization Results & Insights -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                <!-- Best Result Summary -->
+                <div class="dashboard-card">
+                    <h3 style="color: #1e40af; margin-bottom: 0.5rem;">🏅 Best Result Summary</h3>
+                    <p style="color: #475569; margin-bottom: 1rem;">Review the best performing parameter set from your last optimization run.</p>
+                    <div style="display: flex; flex-direction: column; gap: 0.3rem; color: #475569; margin-bottom: 1rem;">
+                        <div style="display: flex; justify-content: space-between;"><span>Sharpe Ratio:</span> <span class="positive">2.17</span></div>
+                        <div style="display: flex; justify-content: space-between;"><span>Total Return:</span> <span class="positive">+35.2%</span></div>
+                        <div style="display: flex; justify-content: space-between;"><span>Parameters:</span> <span>RSI=14, SMA=50</span></div>
+                    </div>
+                    <button class="btn btn-secondary" onclick="showAlert('📄 Detailed optimization result view coming soon')">View Details</button>
+                </div>
+                <!-- Parameter Surface -->
+                <div class="dashboard-card">
+                    <h3 style="color: #1e40af; margin-bottom: 0.5rem;">🗺️ Parameter Surface</h3>
+                    <p style="color: #475569; margin-bottom: 1rem;">Visualize how performance changes across different parameter combinations.</p>
+                    <button class="btn btn-secondary" onclick="showAlert('📈 Displaying 3D parameter surface plot')">Show Surface Plot</button>
+                </div>
+                <!-- Optimization Progress -->
+                <div class="dashboard-card">
+                    <h3 style="color: #1e40af; margin-bottom: 0.5rem;">⏳ Optimization Progress</h3>
+                    <p style="color: #475569; margin-bottom: 0.5rem;">Monitor the status and metrics of your current optimization run.</p>
+                    <div style="background: #e2e8f0; border-radius: 0.25rem; height: 12px; margin-bottom: 0.5rem; overflow: hidden;">
+                        <div style="width: 45%; height: 100%; background: #60a5fa;"></div>
+                    </div>
+                    <p style="color: #475569; font-size: 0.875rem;">45% complete</p>
+                    <button class="btn btn-secondary" onclick="showAlert('🔄 Refreshing optimization status')">Refresh</button>
+                </div>
+            </div>
         </div>
 
         <!-- Live Trading Page -->
@@ -981,6 +1132,92 @@
                     <div style="padding: 1rem; background: linear-gradient(135deg, #fee2e2, #fecaca); color: #dc2626; border-radius: 10px;">
                         🔴 Connection to Broker API lost - reconnecting...
                     </div>
+                </div>
+            </div>
+
+            <!-- Real-Time Positions, Orders & Risk -->
+            <div class="dashboard-grid" style="margin-top: 2rem;">
+                <!-- Open Positions -->
+                <div class="dashboard-card" style="overflow-x: auto;">
+                    <h3 style="color: #1e40af; margin-bottom: 0.5rem;">📂 Open Positions</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Symbol</th>
+                                <th>Quantity</th>
+                                <th>Entry Price</th>
+                                <th>Current Price</th>
+                                <th>P&L</th>
+                                <th>Risk</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>AAPL</td>
+                                <td>100</td>
+                                <td>$185.42</td>
+                                <td>$187.10</td>
+                                <td class="positive">+$168</td>
+                                <td><span class="risk-indicator risk-low"></span>Low</td>
+                            </tr>
+                            <tr>
+                                <td>TSLA</td>
+                                <td>50</td>
+                                <td>$245.18</td>
+                                <td>$243.90</td>
+                                <td class="negative">-$64</td>
+                                <td><span class="risk-indicator risk-medium"></span>Medium</td>
+                            </tr>
+                            <tr>
+                                <td>MSFT</td>
+                                <td>75</td>
+                                <td>$378.95</td>
+                                <td>$380.20</td>
+                                <td class="positive">+$93</td>
+                                <td><span class="risk-indicator risk-high"></span>High</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Order Management -->
+                <div class="dashboard-card">
+                    <h3 style="color: #1e40af; margin-bottom: 0.5rem;">📝 Order Management</h3>
+                    <p style="color: #475569; margin-bottom: 1rem;">Place trades directly or close positions with a single click.</p>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <button class="btn btn-secondary" onclick="showAlert('🛒 Open manual trade ticket')">Place Order</button>
+                        <button class="btn btn-danger" onclick="showAlert('❌ Closing all open positions')">Close All Positions</button>
+                        <button class="btn btn-danger" onclick="showAlert('⚠️ Pausing all strategies')">Pause All Strategies</button>
+                    </div>
+                </div>
+                <!-- Risk Metrics -->
+                <div class="dashboard-card">
+                    <h3 style="color: #1e40af; margin-bottom: 0.5rem;">📉 Real‑Time Risk Metrics</h3>
+                    <p style="color: #475569; margin-bottom: 1rem;">Monitor portfolio risk and exposures continuously.</p>
+                    <div style="display: flex; flex-direction: column; gap: 0.3rem; color: #475569;">
+                        <div style="display: flex; justify-content: space-between;"><span>VaR (1D):</span> <span>1.25%</span></div>
+                        <div style="display: flex; justify-content: space-between;"><span>CVaR (1D):</span> <span>2.10%</span></div>
+                        <div style="display: flex; justify-content: space-between;"><span>Max Drawdown:</span> <span>-8.3%</span></div>
+                        <div style="display: flex; justify-content: space-between;"><span>Portfolio Beta:</span> <span>0.92</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Live Trading Tools -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                <div class="dashboard-card">
+                    <h3 style="color: #1e40af; margin-bottom: 0.5rem;">📰 News & Sentiment Feed</h3>
+                    <p style="color: #475569; margin-bottom: 1rem;">Stay ahead with real‑time news, macro events and sentiment analysis tailored to your strategies.</p>
+                    <button class="btn btn-secondary" onclick="showAlert('📰 Opening real‑time news & sentiment feed')">Open News Feed</button>
+                </div>
+                <div class="dashboard-card">
+                    <h3 style="color: #1e40af; margin-bottom: 0.5rem;">🔔 Alerts & Notifications</h3>
+                    <p style="color: #475569; margin-bottom: 1rem;">View recent alerts, configure notification rules and manage your alert subscriptions.</p>
+                    <button class="btn btn-secondary" onclick="showAlert('🔔 Opening alerts & notification center')">View Alerts</button>
+                </div>
+                <div class="dashboard-card">
+                    <h3 style="color: #1e40af; margin-bottom: 0.5rem;">⚡ Execution Monitor</h3>
+                    <p style="color: #475569; margin-bottom: 1rem;">Monitor order routing, broker connections and execution status across all strategies.</p>
+                    <button class="btn btn-secondary" onclick="showAlert('⚡ Opening execution & broker monitor')">Open Execution Monitor</button>
                 </div>
             </div>
         </div>
@@ -1173,7 +1410,381 @@
     </div>
 
     <!-- JavaScript -->
-    <script src="prototype.js"></script>
+        
+        <!-- Strategy Builder Page -->
+        <div class="page" id="strategy-builder">
+            <h1 style="color: #1e40af; font-size: 2.5rem; margin-bottom: 1rem;">🔧 Visual Strategy Builder & Generator</h1>
+            <p style="color: #475569; margin-bottom: 2rem; max-width: 800px;">Construct custom trading strategies using our intuitive drag‑and‑drop canvas or let the AI generate new strategy variants based on your criteria. This tool empowers traders of all skill levels to create, modify and explore algorithmic ideas without writing code.</p>
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; align-items: flex-start;">
+                <!-- Strategy Canvas -->
+                <div class="dashboard-card" style="min-height: 350px;">
+                    <h3 style="color: #1e40af; margin-bottom: 0.5rem;">🧩 Strategy Canvas</h3>
+                    <p style="color: #475569; margin-bottom: 1rem;">Drag indicators and conditional blocks here to assemble your trading strategy. Build entry and exit logic visually and see an instant preview.</p>
+                    <div style="flex: 1; border: 2px dashed #cbd5e1; border-radius: 0.5rem; padding: 1rem; height: 200px; color: #94a3b8; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        Drop components here…
+                    </div>
+                    <button class="btn btn-secondary" onclick="showAlert('🧩 Drag‑and‑drop builder functionality is not implemented in this prototype')">Learn More</button>
+                </div>
+                <!-- Side Panel -->
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    <!-- Indicator Library -->
+                    <div class="dashboard-card">
+                        <h3 style="color: #1e40af; margin-bottom: 0.5rem;">📚 Indicator Library</h3>
+                        <p style="color: #475569; margin-bottom: 0.5rem;">Choose from a wide range of technical indicators to add to your strategy.</p>
+                        <ul style="margin-left: 1rem; color: #475569; list-style-type: disc; margin-bottom: 0.5rem;">
+                            <li>Moving Averages (SMA, EMA)</li>
+                            <li>Relative Strength Index (RSI)</li>
+                            <li>Bollinger Bands</li>
+                            <li>MACD, Stochastics & more</li>
+                        </ul>
+                        <button class="btn btn-secondary" onclick="showAlert('📚 Indicator library explorer would open here')">Browse More</button>
+                    </div>
+                    <!-- Logic Builder -->
+                    <div class="dashboard-card">
+                        <h3 style="color: #1e40af; margin-bottom: 0.5rem;">🧠 Logic Builder</h3>
+                        <p style="color: #475569; margin-bottom: 1rem;">Create custom conditions with AND/OR operators to define complex strategies.</p>
+                        <button class="btn btn-secondary" onclick="showAlert('🔧 Logic builder configuration would open here')">Open Logic Builder</button>
+                    </div>
+                    <!-- Auto Strategy Generator -->
+                    <div class="dashboard-card">
+                        <h3 style="color: #1e40af; margin-bottom: 0.5rem;">🤖 Auto Strategy Generator</h3>
+                        <p style="color: #475569; margin-bottom: 1rem;">Leverage our AI to automatically generate multiple strategy variants based on your selected universe and risk profile.</p>
+                        <button class="btn btn-primary" onclick="showAlert('🚀 Generating strategy variants…')">Generate Strategies</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Additional Builder Features -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                <div class="dashboard-card">
+                    <h3 style="color: #1e40af; margin-bottom: 0.5rem;">🌐 Multi‑Timeframe & Asset</h3>
+                    <p style="color: #475569; margin-bottom: 1rem;">Design strategies across multiple timeframes and asset classes for robust performance and diversification.</p>
+                    <button class="btn btn-secondary" onclick="showAlert('🕒 Multi‑timeframe configuration coming soon')">Configure Multi‑Timeframe</button>
+                </div>
+                <div class="dashboard-card">
+                    <h3 style="color: #1e40af; margin-bottom: 0.5rem;">🔍 Debugger & Error Check</h3>
+                    <p style="color: #475569; margin-bottom: 1rem;">Instantly detect logic errors, visualise data flows and step through your strategy with our integrated debugger.</p>
+                    <button class="btn btn-secondary" onclick="showAlert('🛠️ Debugger interface not implemented in this prototype')">Open Debugger</button>
+                </div>
+                <div class="dashboard-card">
+                    <h3 style="color: #1e40af; margin-bottom: 0.5rem;">📁 Templates & Collaboration</h3>
+                    <p style="color: #475569; margin-bottom: 1rem;">Access a gallery of templates, import/export strategies and share your work with collaborators.</p>
+                    <button class="btn btn-secondary" onclick="showAlert('📁 Template gallery and sharing portal coming soon')">Browse Templates</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Validation Page -->
+        <div class="page" id="validation">
+            <h1 style="color: #1e40af; font-size: 2.5rem; margin-bottom: 1rem;">✅ Strategy Validation & Backtesting</h1>
+            <p style="color: #475569; margin-bottom: 2rem; max-width: 800px;">Run historical backtests and advanced statistical validations to ensure your strategy is robust and ready for live trading.</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;">
+                <!-- Backtest Configuration -->
+                <div class="dashboard-card">
+                    <h3 style="color: #1e40af; margin-bottom: 0.5rem;">🧪 Backtest Configuration</h3>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem;">
+                        <label>Strategy:
+                            <select class="form-select">
+                                <option>Momentum RSI Pro</option>
+                                <option>Mean Reversion Alpha</option>
+                                <option>Breakout Scanner</option>
+                            </select>
+                        </label>
+                        <label>Start Date:
+                            <input type="date" class="form-input">
+                        </label>
+                        <label>End Date:
+                            <input type="date" class="form-input">
+                        </label>
+                        <label>Transaction Cost:
+                            <input type="number" class="form-input" placeholder="0.1%">
+                        </label>
+                        <label>Slippage:
+                            <input type="number" class="form-input" placeholder="0.05%">
+                        </label>
+                    </div>
+                    <button class="btn btn-primary" onclick="showAlert('🧪 Running backtest...')">Run Backtest</button>
+                </div>
+                <!-- Advanced Validation -->
+                <div class="dashboard-card">
+                    <h3 style="color: #1e40af; margin-bottom: 0.5rem;">📊 Advanced Validation</h3>
+                    <p style="color: #475569; margin-bottom: 1rem;">Assess strategy robustness with walk‑forward analysis and Monte Carlo simulations.</p>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <button class="btn btn-secondary" onclick="showAlert('🚶‍♂️ Performing walk‑forward analysis')">Walk‑Forward Analysis</button>
+                        <button class="btn btn-secondary" onclick="showAlert('🎲 Running Monte Carlo simulation')">Monte Carlo Simulation</button>
+                        <button class="btn btn-secondary" onclick="showAlert('📈 Statistical significance testing in progress')">Run Statistical Tests</button>
+                    </div>
+                </div>
+                <!-- Results Summary -->
+                <div class="dashboard-card">
+                    <h3 style="color: #1e40af; margin-bottom: 0.5rem;">📋 Results Summary</h3>
+                    <p style="color: #475569; margin-bottom: 1rem;">Review key performance metrics from your latest validation runs.</p>
+                    <div style="display: flex; flex-direction: column; gap: 0.3rem; color: #475569; margin-bottom: 1rem;">
+                        <div style="display: flex; justify-content: space-between;"><span>Sharpe Ratio:</span> <span class="positive">1.84</span></div>
+                        <div style="display: flex; justify-content: space-between;"><span>Max Drawdown:</span> <span class="negative">-9.3%</span></div>
+                        <div style="display: flex; justify-content: space-between;"><span>Profit Factor:</span> <span>1.97</span></div>
+                        <div style="display: flex; justify-content: space-between;"><span>Win Rate:</span> <span>57%</span></div>
+                    </div>
+                    <button class="btn btn-secondary" onclick="showAlert('📤 Generating validation report')">Generate Report</button>
+                </div>
+                <!-- Risk & Exposure Analysis -->
+                <div class="dashboard-card">
+                    <h3 style="color: #1e40af; margin-bottom: 0.5rem;">🛡️ Risk & Exposure Analysis</h3>
+                    <p style="color: #475569; margin-bottom: 1rem;">Analyse factor exposures, correlations and risk contributions across your strategy’s trades.</p>
+                    <button class="btn btn-secondary" onclick="showAlert('🔍 Running exposure and correlation analysis')">Run Exposure Analysis</button>
+                </div>
+                <!-- Cross‑Validation & Regime Testing -->
+                <div class="dashboard-card">
+                    <h3 style="color: #1e40af; margin-bottom: 0.5rem;">🧪 Cross‑Validation & Regime Testing</h3>
+                    <p style="color: #475569; margin-bottom: 1rem;">Perform k‑fold cross‑validation and market regime tests to ensure robustness across different conditions.</p>
+                    <button class="btn btn-secondary" onclick="showAlert('🔁 Executing cross‑validation and regime testing')">Perform Cross‑Validation</button>
+                </div>
+                <!-- Scenario & Stress Testing -->
+                <div class="dashboard-card">
+                    <h3 style="color: #1e40af; margin-bottom: 0.5rem;">🔥 Scenario & Stress Testing</h3>
+                    <p style="color: #475569; margin-bottom: 1rem;">Stress test your strategy under bull, bear and sideways markets, and extreme tail events.</p>
+                    <button class="btn btn-secondary" onclick="showAlert('⚡ Running scenario and stress tests')">Run Stress Test</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tasks Page -->
+        <div class="page" id="tasks">
+            <h1 style="color: #1e40af; font-size: 2.5rem; margin-bottom: 1rem;">⏱️ Task Manager</h1>
+            <p style="color: #475569; margin-bottom: 2rem; max-width: 800px;">Monitor and manage all your running and completed tasks including backtests, validations, optimizations and deployments.</p>
+            <!-- Task Summary -->
+            <div class="dashboard-card" style="margin-bottom: 1.5rem;">
+                <h3 style="color: #1e40af; margin-bottom: 0.5rem;">📈 Task Summary</h3>
+                <p style="color: #475569; margin-bottom: 1rem;">Overview of running, completed and failed jobs across backtesting, validation, optimization and trading.</p>
+                <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1rem;">
+                    <div style="flex:1; min-width:140px;">
+                        <div class="metric-value">2</div>
+                        <div class="metric-label">Running</div>
+                    </div>
+                    <div style="flex:1; min-width:140px;">
+                        <div class="metric-value">5</div>
+                        <div class="metric-label">Completed</div>
+                    </div>
+                    <div style="flex:1; min-width:140px;">
+                        <div class="metric-value">1</div>
+                        <div class="metric-label">Queued</div>
+                    </div>
+                    <div style="flex:1; min-width:140px;">
+                        <div class="metric-value">0</div>
+                        <div class="metric-label">Failed</div>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 0.5rem;">
+                    <button class="btn btn-secondary" onclick="showAlert('🔄 Refreshing task summary')">Refresh</button>
+                    <button class="btn btn-secondary" onclick="showAlert('🧹 Clearing completed tasks')">Clear Completed</button>
+                </div>
+            </div>
+
+            <div class="dashboard-card" style="overflow-x: auto;">
+                <h3 style="color: #1e40af; margin-bottom: 1rem;">Active & Recent Tasks</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Task ID</th>
+                            <th>Type</th>
+                            <th>Strategy</th>
+                            <th>Status</th>
+                            <th>Progress</th>
+                            <th>Start Time</th>
+                            <th>Elapsed</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#1027</td>
+                            <td>Backtest</td>
+                            <td>Momentum RSI Pro</td>
+                            <td>Running</td>
+                            <td>72%</td>
+                            <td>09:32</td>
+                            <td>15m</td>
+                            <td><button class="btn btn-secondary" onclick="showAlert('📄 View task details')">Details</button> <button class="btn btn-danger" onclick="showAlert('🛑 Canceling task')">Cancel</button></td>
+                        </tr>
+                        <tr>
+                            <td>#1025</td>
+                            <td>Optimization</td>
+                            <td>Breakout Scanner</td>
+                            <td>Queued</td>
+                            <td>0%</td>
+                            <td>—</td>
+                            <td>0m</td>
+                            <td><button class="btn btn-secondary" onclick="showAlert('📄 View task details')">Details</button> <button class="btn btn-danger" onclick="showAlert('🛑 Canceling task')">Cancel</button></td>
+                        </tr>
+                        <tr>
+                            <td>#1023</td>
+                            <td>Validation</td>
+                            <td>Mean Reversion Alpha</td>
+                            <td>Completed</td>
+                            <td>100%</td>
+                            <td>08:10</td>
+                            <td>40m</td>
+                            <td><button class="btn btn-secondary" onclick="showAlert('📄 View task details')">Details</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button class="btn btn-secondary" style="margin-top: 1rem;" onclick="showAlert('🔄 Refreshing tasks list')">Refresh</button>
+            </div>
+        </div>
+
+        <!-- Reports Page -->
+        <div class="page" id="reports">
+            <h1 style="color: #1e40af; font-size: 2.5rem; margin-bottom: 1rem;">📋 Reports & Analytics</h1>
+            <p style="color: #475569; margin-bottom: 2rem; max-width: 800px;">Access generated reports across backtests, validations, optimizations and compliance. Download or view details for each report type.</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                <!-- Backtesting Reports -->
+                <div class="dashboard-card">
+                    <h3 style="color: #1e40af; margin-bottom: 0.5rem;">🧪 Backtest Reports</h3>
+                    <p style="color: #475569; margin-bottom: 1rem;">Review and export historical backtest results for your strategies.</p>
+                    <button class="btn btn-secondary" onclick="showAlert('📊 Opening backtest reports library')">View Reports</button>
+                </div>
+                <!-- Validation Reports -->
+                <div class="dashboard-card">
+                    <h3 style="color: #1e40af; margin-bottom: 0.5rem;">✅ Validation Reports</h3>
+                    <p style="color: #475569; margin-bottom: 1rem;">Access detailed walk‑forward and Monte Carlo validation reports.</p>
+                    <button class="btn btn-secondary" onclick="showAlert('📊 Opening validation reports library')">View Reports</button>
+                </div>
+                <!-- Optimization Reports -->
+                <div class="dashboard-card">
+                    <h3 style="color: #1e40af; margin-bottom: 0.5rem;">⚙️ Optimization Reports</h3>
+                    <p style="color: #475569; margin-bottom: 1rem;">Browse past optimization runs and compare parameter sets.</p>
+                    <button class="btn btn-secondary" onclick="showAlert('📊 Opening optimization reports library')">View Reports</button>
+                </div>
+                <!-- Compliance Reports -->
+                <div class="dashboard-card">
+                    <h3 style="color: #1e40af; margin-bottom: 0.5rem;">⚖️ Compliance & Risk Reports</h3>
+                    <p style="color: #475569; margin-bottom: 1rem;">Generate audit trails, risk disclosures and regulatory filings.</p>
+                    <button class="btn btn-secondary" onclick="showAlert('📊 Opening compliance reports library')">View Reports</button>
+                </div>
+                <!-- Ranking & Risk Reports -->
+                <div class="dashboard-card">
+                    <h3 style="color: #1e40af; margin-bottom: 0.5rem;">📈 Ranking & Risk Reports</h3>
+                    <p style="color: #475569; margin-bottom: 1rem;">Explore strategy leaderboards and risk breakdowns across your portfolio.</p>
+                    <button class="btn btn-secondary" onclick="showAlert('📊 Opening ranking & risk reports library')">View Reports</button>
+                </div>
+                <!-- AI & Portfolio Reports -->
+                <div class="dashboard-card">
+                    <h3 style="color: #1e40af; margin-bottom: 0.5rem;">🧠 AI & Portfolio Reports</h3>
+                    <p style="color: #475569; margin-bottom: 1rem;">Dive into AI‑generated insights, portfolio construction recommendations and compliance summaries.</p>
+                    <button class="btn btn-secondary" onclick="showAlert('📊 Opening AI & portfolio reports library')">View Reports</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Overview Page -->
+        <div class="page" id="features">
+            <div style="margin-bottom: 2rem;">
+                <h1 style="color: #1e40af; font-size: 2.5rem;">📜 Platform Feature Overview</h1>
+                <p style="color: #475569; margin-top: 0.5rem; max-width: 800px;">Explore the full capabilities of Samer Trader. This page summarises each major module of the platform, providing a high‑level view of how the system supports the complete lifecycle of algorithmic trading strategies.</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;">
+                <!-- Visual Strategy Builder -->
+                <div class="dashboard-card">
+                    <h2 style="color: #1e40af; margin-bottom: 0.5rem;">🛠️ Visual Strategy Builder</h2>
+                    <p style="color: #475569; margin-bottom: 0.5rem;">Construct trading strategies with drag‑and‑drop blocks, indicators and logic without writing code.</p>
+                    <ul style="margin-left: 1rem; color: #475569; list-style-type: disc;">
+                        <li>Indicator library with 50+ technical indicators</li>
+                        <li>Conditional logic builder with AND/OR operators</li>
+                        <li>Real‑time syntax checking and error highlighting</li>
+                        <li>Template gallery and export/import support</li>
+                    </ul>
+                </div>
+                <!-- Auto Strategy Generator -->
+                <div class="dashboard-card">
+                    <h2 style="color: #1e40af; margin-bottom: 0.5rem;">🤖 Auto Strategy Generator</h2>
+                    <p style="color: #475569; margin-bottom: 0.5rem;">Harness AI and machine learning to automatically propose and evolve trading strategies.</p>
+                    <ul style="margin-left: 1rem; color: #475569; list-style-type: disc;">
+                        <li>Machine learning pattern recognition and genetic algorithms</li>
+                        <li>Market regime classification and parameter exploration</li>
+                        <li>Generation wizard with guided settings and progress tracking</li>
+                        <li>Variant comparison and bulk selection tools</li>
+                    </ul>
+                </div>
+                <!-- Backtesting & Validation -->
+                <div class="dashboard-card">
+                    <h2 style="color: #1e40af; margin-bottom: 0.5rem;">🧪 Backtesting & Validation</h2>
+                    <p style="color: #475569; margin-bottom: 0.5rem;">Evaluate strategies on historical data with realistic market conditions and advanced robustness tests.</p>
+                    <ul style="margin-left: 1rem; color: #475569; list-style-type: disc;">
+                        <li>High‑performance backtesting with transaction cost modelling</li>
+                        <li>Multi‑asset support and point‑in‑time data integrity</li>
+                        <li>Walk‑forward, Monte Carlo and statistical validation tools</li>
+                        <li>Trade‑by‑trade analysis and report export</li>
+                    </ul>
+                </div>
+                <!-- Optimization & Analytics -->
+                <div class="dashboard-card">
+                    <h2 style="color: #1e40af; margin-bottom: 0.5rem;">⚙️ Optimization & Analytics</h2>
+                    <p style="color: #475569; margin-bottom: 0.5rem;">Tune strategy parameters and analyse performance across multiple metrics and benchmarks.</p>
+                    <ul style="margin-left: 1rem; color: #475569; list-style-type: disc;">
+                        <li>Genetic, Bayesian and grid search optimization engines</li>
+                        <li>Real‑time optimization progress and result visualisations</li>
+                        <li>Performance dashboards with risk/return metrics and drawdown charts</li>
+                        <li>Sensitivity analysis and historical optimisation analysis</li>
+                    </ul>
+                </div>
+                <!-- Ranking & Risk Management -->
+                <div class="dashboard-card">
+                    <h2 style="color: #1e40af; margin-bottom: 0.5rem;">📈 Ranking & Risk Management</h2>
+                    <p style="color: #475569; margin-bottom: 0.5rem;">Identify the best strategies and control portfolio risk with intelligent scoring and real‑time safeguards.</p>
+                    <ul style="margin-left: 1rem; color: #475569; list-style-type: disc;">
+                        <li>Customisable ranking criteria and strategy leaderboards</li>
+                        <li>Risk metrics including VaR, CVaR and drawdown limits</li>
+                        <li>Adaptive position sizing and automated protection mechanisms</li>
+                        <li>Market condition heatmaps and clustering visualisations</li>
+                    </ul>
+                </div>
+                <!-- Data & News Engine -->
+                <div class="dashboard-card">
+                    <h2 style="color: #1e40af; margin-bottom: 0.5rem;">📰 Data & News Engine</h2>
+                    <p style="color: #475569; margin-bottom: 0.5rem;">Stay informed with integrated real‑time market data feeds and sentiment‑aware news streams.</p>
+                    <ul style="margin-left: 1rem; color: #475569; list-style-type: disc;">
+                        <li>Real‑time quotes and market data across multiple asset classes</li>
+                        <li>Live news feed with NLP‑driven sentiment scoring</li>
+                        <li>Event detection, classification and relevance filtering</li>
+                        <li>Sentiment‑based alerts and impact analysis charts</li>
+                    </ul>
+                </div>
+                <!-- Execution & Simulation -->
+                <div class="dashboard-card">
+                    <h2 style="color: #1e40af; margin-bottom: 0.5rem;">🚀 Execution & Simulation</h2>
+                    <p style="color: #475569; margin-bottom: 0.5rem;">Execute strategies live or in paper trading mode with confidence and control.</p>
+                    <ul style="margin-left: 1rem; color: #475569; list-style-type: disc;">
+                        <li>Multi‑broker order routing and real‑time execution monitoring</li>
+                        <li>Paper trading environment mirroring live conditions</li>
+                        <li>Order management with audit trails and trade history</li>
+                        <li>Manual override controls and emergency stop actions</li>
+                    </ul>
+                </div>
+                <!-- Collaboration & API -->
+                <div class="dashboard-card">
+                    <h2 style="color: #1e40af; margin-bottom: 0.5rem;">👥 Collaboration & API</h2>
+                    <p style="color: #475569; margin-bottom: 0.5rem;">Connect with your team and extend the platform through powerful APIs and integrations.</p>
+                    <ul style="margin-left: 1rem; color: #475569; list-style-type: disc;">
+                        <li>User management with roles, teams and strategy sharing</li>
+                        <li>RESTful and WebSocket APIs with developer portal</li>
+                        <li>Integration templates, webhooks and third‑party marketplace</li>
+                        <li>SSO, API key management and audit logging</li>
+                    </ul>
+                </div>
+                <!-- AI & Portfolio & Compliance -->
+                <div class="dashboard-card">
+                    <h2 style="color: #1e40af; margin-bottom: 0.5rem;">🤖 AI, Portfolio & Compliance</h2>
+                    <p style="color: #475569; margin-bottom: 0.5rem;">Leverage machine learning, optimise portfolios and meet regulatory standards.</p>
+                    <ul style="margin-left: 1rem; color: #475569; list-style-type: disc;">
+                        <li>ML‑driven strategy enhancement and predictive analytics</li>
+                        <li>Portfolio construction, risk budgeting and rebalancing tools</li>
+                        <li>Comprehensive audit trails and automated compliance reporting</li>
+                        <li>Regulatory dashboards and document management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <script src="prototype.js"></script>
 
 </body>
 </html>
