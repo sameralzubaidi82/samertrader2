@@ -21,15 +21,31 @@ function showPage(pageId) {
         selectedPage.classList.add('active');
     }
 
-    // Highlight the navigation item that triggers this page.
-    // We search for a nav-item whose inline onclick contains the pageId.
-    const navItem = document.querySelector(`.nav-item[onclick*="${pageId}"]`);
-    if (navItem) {
-        navItem.classList.add('active');
-    }
+        // Highlight the navigation item that triggers this page.
+        // We search for a nav-item whose inline onclick contains the pageId.
+        // Some page IDs may include characters (like hyphens) that break the CSS selector.
+        // Wrap the querySelector in a try/catch to avoid script termination on invalid selectors.
+        try {
+            const navItem = document.querySelector(`.nav-item[onclick*="${pageId}"]`);
+            if (navItem) {
+                navItem.classList.add('active');
+            }
+        } catch (e) {
+            console.error('Failed to highlight nav item:', e);
+        }
 
     // Log the page change to the console for debugging.
     console.log(`Navigated to: ${pageId}`);
+
+        // Scroll the window to the top whenever a new page is shown.
+        // Without this, pages that start lower down the document may appear blank
+        // until the user scrolls. Smooth scrolling improves the user experience.
+        try {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } catch (e) {
+            // Fallback for browsers that don't support smooth scrolling
+            window.scrollTo(0, 0);
+        }
 }
 
 // Display a simple alert with the provided message.
@@ -174,7 +190,14 @@ function startForwardTest() {
     }
 }
 
-// When the DOM is loaded, ensure the dashboard page is visible by default.
-document.addEventListener('DOMContentLoaded', () => {
-    showPage('dashboard');
-});
+    // Ensure the dashboard page is visible by default once the script loads.
+    // If the DOM has already loaded by the time this script runs,
+    // the 'DOMContentLoaded' event will not fire for new listeners.
+    // Calling showPage immediately ensures the dashboard is displayed.
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+            showPage('dashboard');
+        });
+    } else {
+        showPage('dashboard');
+    }
