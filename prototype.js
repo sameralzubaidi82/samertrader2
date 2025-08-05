@@ -3,64 +3,60 @@
 
 // Show a given page by its ID and highlight the corresponding nav item.
 function showPage(pageId) {
-        // Hide all pages by setting their display to none and removing the
-        // active class. Explicitly manipulating the style attribute avoids
-        // conflicts with other CSS rules that might override the display
-        // property via specificity. Removing the active class keeps the
-        // semantic class state in sync.
-        const pages = document.querySelectorAll('.page');
-        pages.forEach(page => {
-            page.classList.remove('active');
-            page.style.display = 'none';
-        });
+    // Explicitly list all page IDs so we can reliably hide and show each page.
+    // This avoids any issues with querySelectorAll failing to match nodes due
+    // to whitespace or DOM nesting. When new pages are added to the
+    // prototype, append their IDs here as well.
+    const pageIds = [
+        'dashboard',
+        'strategies',
+        'strategy-builder',
+        'validation',
+        'optimization',
+        'tasks',
+        'reports',
+        'features',
+        'live-trading'
+    ];
 
-    // Remove active class from all navigation items
+    // Hide all pages and remove the active class. Show and activate only
+    // the selected page ID.
+    pageIds.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+            if (id === pageId) {
+                // Use setProperty with priority to override any conflicting CSS
+                el.style.setProperty('display', 'block', 'important');
+                el.classList.add('active');
+            } else {
+                el.style.setProperty('display', 'none', 'important');
+                el.classList.remove('active');
+            }
+        }
+    });
+
+    // Reset navigation highlighting. Then apply the active class to the
+    // nav item whose onclick attribute references the selected page. This
+    // method avoids constructing CSS selectors that could break on hyphens
+    // and other special characters.
     const navItems = document.querySelectorAll('.nav-item');
     navItems.forEach(item => {
         item.classList.remove('active');
+        const attr = item.getAttribute('onclick');
+        if (attr && attr.includes(pageId)) {
+            item.classList.add('active');
+        }
     });
 
-        // Show the selected page if it exists. Set its display back to
-        // block in addition to adding the active class to ensure it
-        // becomes visible regardless of other CSS rules.
-        const selectedPage = document.getElementById(pageId);
-        if (selectedPage) {
-            selectedPage.classList.add('active');
-            selectedPage.style.display = 'block';
-        }
-
-        // Highlight the navigation item that triggers this page.
-        // Instead of using a CSS selector that may break on hyphens or other
-        // special characters in the pageId, iterate over all nav items and
-        // compare their inline onclick attributes. This avoids invalid
-        // selector errors and is more resilient if additional nav items are
-        // introduced.
-        try {
-            const navItemsList = document.querySelectorAll('.nav-item');
-            navItemsList.forEach(item => {
-                // Ensure we clear any existing active class
-                item.classList.remove('active');
-                const onclickAttr = item.getAttribute('onclick');
-                if (onclickAttr && onclickAttr.includes(pageId)) {
-                    item.classList.add('active');
-                }
-            });
-        } catch (e) {
-            console.error('Failed to highlight nav item:', e);
-        }
-
-    // Log the page change to the console for debugging.
+    // Debug logging to trace navigation events during development.
     console.log(`Navigated to: ${pageId}`);
 
-        // Scroll the window to the top whenever a new page is shown.
-        // Without this, pages that start lower down the document may appear blank
-        // until the user scrolls. Smooth scrolling improves the user experience.
-        try {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        } catch (e) {
-            // Fallback for browsers that don't support smooth scrolling
-            window.scrollTo(0, 0);
-        }
+    // Always scroll to the top of the page when navigating to a new section.
+    try {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    } catch (e) {
+        window.scrollTo(0, 0);
+    }
 }
 
 // Display a simple alert with the provided message.
